@@ -6,16 +6,19 @@
 #include <string>
 #include <cmath>
 #include <iomanip>
+using namespace std;
 
 class Citizen
 {
 private:
-
+	// Create the private class, except color since it'll consistantly change
 	string _firstName;
 	string _lastName;
 	int _id;
 
 public:
+	// color gonna change
+	string _color;
 
 	Citizen();
 
@@ -25,26 +28,24 @@ public:
 	//but you can change their favorite color
 	Citizen(int id, string firstName, string lastName, string color);
 
-	Citizen(Citizen* s);
-
 	//Creates a new Citizen object by copying data from the
 	//passed in citizen
 	Citizen(Citizen* citizen);
 
 	//Returns the first name of this citizen
-	string getFirstName();
+	string getFirstName() const;
 
 	//Returns the last name of this citizen
-	string getLastName();
+	string getLastName() const;
 
 	//Returns the id for this citizen
-	int getId();
+	int getId() const;
 
 	//Returns the favorite color for this citizen
-	string getFavoriteColor();
+	string getFavoriteColor() const;
 
 	//Sets the favorite color for this citizen
-	void setFavoriteColor(string color);
+	void setFavoriteColor(string value);
 
 };
 
